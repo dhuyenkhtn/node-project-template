@@ -1,4 +1,4 @@
-name: CI
+name: Lint & Build
 
 on: push
 
@@ -7,10 +7,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - name: "Checkout 🏴󠁧󠁢󠁥󠁮󠁧󠁿"
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
 
-      - name: Run a hello world
-        run: echo "Hello, world!"
+      - name: Install dependencies 🦴
+        run: npm install
         
-      - name: Run a bad syntax
-        run: echo "Hello, world!"; mv /foo/bar
+      - name: Linting ☑
+        run: npm run lint
+        
+      - name: Build 🍎
+        run: npm run build
+        
+      - name: Run Test
+        run: npm run test
