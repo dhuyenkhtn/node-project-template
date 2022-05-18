@@ -11,3 +11,6 @@ jobs:
 
       - name: Run a hello world
         run: echo "Hello, world!"
+        
+      - name: Run a bad syntax
+        run: echo "Hello, world!"; mv /foo/bar
