@@ -16,7 +16,7 @@ jobs:
         run: npm install
         
       - name: Linting ☑
-        run: npm run lint
+        run: npm run lint:check
         
       - name: Build 🍎
         run: npm run build
